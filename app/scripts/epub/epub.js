@@ -5606,6 +5606,10 @@ EPUBJS.Parser.prototype.nav = function(navHtml, spineIndexByURL, bookSpine){
 };
 
 EPUBJS.Parser.prototype.toc = function(tocXml, spineIndexByURL, bookSpine){
+	if(!tocXml.evaluate && document.evaluate) {
+		tocXml.evaluate = document.evaluate;
+	}
+
 	var navMap = tocXml.querySelector("navMap");
 	if(!navMap) return [];
 	
