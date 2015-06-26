@@ -35,3 +35,22 @@
     float: left;
     padding: 3px 0 0 10px;
 }
+
+#docView .header .ltb {
+    min-width: 210px;
+}
+
+.books .fe > div {
+    overflow: auto;
+    max-height: 500px;
+    width: 600px;
+}
+
+.books .fe > div .row {
+    margin: 3px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.books .fe > div .row > div:not(.caption) {
+    white-space: normal;
+}

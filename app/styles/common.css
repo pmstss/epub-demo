@@ -472,7 +472,7 @@ body {
     position: relative;
 }
 
-.header .ltb li a, .header .rtb li a {
+.header .ltb li > div > a, .header .rtb li > div > a {
     float: left;
     white-space: nowrap;
     width: 26px;

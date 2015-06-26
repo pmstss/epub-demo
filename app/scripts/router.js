@@ -40,6 +40,11 @@ LookUp.Router = Backbone.Router.extend({
             appState: this.appState
         });
 
+        new LookUp.views.DocHeaderView({
+            el: $docView.find('.header'),
+            appState: this.appState
+        });
+
         this.appState.on('change:customBookData', function (appState, customBookData) {
             if (customBookData) {
                 this.navigate('custom/' + customBookData.name, {
