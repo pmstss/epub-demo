@@ -20,7 +20,7 @@ LookUp.views.DocHeaderView = Backbone.View.extend({
     },
 
     onBookChange: function (appState, book) {
-        book.getMetadata().then(function (meta) {
+        book.loaded.metadata.then(function (meta) {
             console.log('meta: %o', meta);
             this.$el.find('.headerContainer h1').html(meta.bookTitle + '<span>' + meta.creator + '</span>');
         }.bind(this));

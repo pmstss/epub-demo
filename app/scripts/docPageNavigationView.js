@@ -51,14 +51,14 @@ LookUp.views.DocPageNavigationView = Backbone.View.extend({
     gotoPrevPage: function () {
         var book = this.appState.get('book');
         if (book) {
-            book.prevPage();
+            book.rendition.prev();
         }
     },
 
     gotoNextPage: function () {
         var book = this.appState.get('book');
         if (book) {
-            book.nextPage();
+            book.rendition.next();
         }
     }
 });

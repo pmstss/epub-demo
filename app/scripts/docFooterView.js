@@ -30,7 +30,7 @@ LookUp.views.DocFooterView = Backbone.View.extend({
 
 
         this.listenTo(this.appState, 'change:book', function (appState, book) {
-            book.renderer.on('renderer:locationChanged', function () {
+            book.rendition.on('renderer:locationChanged', function () {
                 console.log('renderer:locationChanged args: %o', arguments);
                 setTimeout(this.onPageChange.bind(this), 200);
             }.bind(this));

@@ -13,11 +13,13 @@ LookUp.views.DocView = Backbone.View.extend({
     },
 
     onBookChange: function (appState, book) {
-        book.ready.all.then(function () {
+        book.loaded.metadata.then(function () {
             $('#loader').hide();
         });
 
-        book.renderTo('book');
+        var rendition = book.renderTo('book');
+        //TODO ###
+        var displayed = rendition.display(1);
     },
 
     onToolbarsVisibleChange: function (appState, toolbarsVisible) {

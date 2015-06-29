@@ -21,7 +21,7 @@ LookUp.views.DocTOCView = Backbone.View.extend({
         this.$tocContent = this.$el.find('.content');
 
         this.listenTo(this.appState, 'change:book', function (appState, book) {
-            book.getToc().then(function (items) {
+            book.loaded.navigation.then(function (items) {
                 console.log('toc: %o', items);
                 this.renderTOC(items);
             }.bind(this));

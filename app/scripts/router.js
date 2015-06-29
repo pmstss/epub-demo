@@ -63,9 +63,7 @@ LookUp.Router = Backbone.Router.extend({
 
         var customBookData = this.appState.get('customBookData');
         if (customBookData) {
-            this.appState.set('book', ePub({
-                bookPath: customBookData.data
-            }));
+            this.appState.set('book', ePub(customBookData.data));
         } else {
             this.defaultRoute();
         }
@@ -78,13 +76,11 @@ LookUp.Router = Backbone.Router.extend({
         }
 
         bookName = /\.epub$/.test(bookName) ? bookName : bookName + '/';
-        this.appState.set('book', ePub({
-            bookPath: '../books/' + bookName
-        }));
+        this.appState.set('book', ePub('../books/' + bookName));
     },
 
     defaultRoute: function () {
-        this.navigate('book/William_Shakespeare_Venus_and_Adonis.epub', {
+        this.navigate('book/William_Shakespeare_Venus_and_Adonis', {
             trigger: true,
             replace: true
         });
